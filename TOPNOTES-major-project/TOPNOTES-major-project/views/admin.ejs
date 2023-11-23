@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Admin login</title>
+</head>
+
+<body>
+
+  <div class="box">
+    <span class="borderline">
+
+    </span>
+    <form method="post" action="/admin">
+      <h2>Admin Login</h2>
+      <div class="inputbox">
+        <input type="text" name="secretkey" required="required" value="<%=locals.email%>" autocomplete="off" />
+        <span>Secret Key</span>
+
+        <i></i>
+        
+      </div>
+
+      <div class="inputbox">
+        <input type="password" name="password" required="required" value="<%=locals.password%>" />
+        <span>Password</span>
+        <i></i>
+        <p class="error">
+          <%= locals.message %>
+        </p>
+      </div>
+      <div class="links">
+
+        <a href="login">Student Login</a>
+      </div>
+      <button type="submit" value="login">Log In</button>
+    </form>
+
+  </div>
+
+</body>
+
+</html>

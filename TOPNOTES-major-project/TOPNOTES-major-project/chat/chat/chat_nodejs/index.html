@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GPM Elearn | Educational Website</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<style>
+  /* .btn{
+    display: inline-block;
+    background: red;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #563434;
+} */
+.display-4{
+  background: linear-gradient(to bottom, #0d1e64, #9921E8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* .jumbotron{
+  background: linear-gradient(
+    to bottom ,#403F44, #1E1B32
+  );
+} */
+/* .messages{
+ background: linear-gradient(
+    to bottom right,#403F44, #1E1B32
+  );
+} */
+
+</style>
+</head>
+<body>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Forum </h1>
+        <br>
+		<div id="messages">
+		</div>
+        <input id="name" class="form-control" placeholder="Sender Name..." require="required">
+        <br>
+        <textarea id="message" class="form-control" placeholder="Message..." require="required"></textarea>
+        <br>
+        <button id="send" class="btn btn-success">Send</button>
+    </div>    
+</div>
+
+<script>
+var socket = io();
+$(() => {
+	$("#send").click(()=>{
+		sendMessage({name: $("#name").val(), message: $("#message").val()});
+	})
+
+	getMessages()
+})
+
+socket.on('message', addMessages)
+
+function addMessages(message){
+	$("#messages").append('<div><strong>'+message.name.charAt(0).toUpperCase()+message.name.slice(1)+'</strong> says: <br><span>'+message.message+'</span></div><hr/>');
+}
+
+function getMessages(){
+  $.get('http://localhost:3000/messages', (data) => {
+	data.forEach(addMessages);
+  })
+}
+
+function sendMessage(message){
+  $.post('http://localhost:3000/messages', message)
+  $("#name").val("");
+  $("#message").val("");
+}
+</script>
+</body>
+</html>

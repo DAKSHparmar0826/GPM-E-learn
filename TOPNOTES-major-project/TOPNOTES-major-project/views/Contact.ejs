@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPM Elearn | Educational Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="email.js"></script>
+</head>
+<body>
+
+    <div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index"><img src="https://drive.google.com/uc?export=view&id=1vCvYtbAoY840Dn5xKi51lBnRqVXvEL15" width="100px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="Courses">Courses</a></li>
+                    <li><a href="messenger">Messenger</a></li>
+                    <li><a href="achievements">Achievements</a></li> 
+                    <li><a href="logout" class="btn">Logout</a></li>
+                </ul>
+            </nav>
+            <img src="Images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+</div>
+<section class="contact">
+    <div class="container">
+        <h2>Contact us for Achievements/queries</h2>
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <h3>Send us your achievements for getting it displayed to the website</h3>
+                <br>
+                <br>
+                
+                <form action="https://formsubmit.co/f0eb168b3eda22a3608cea53c8c31525" method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://localhost:5000/thanks">
+
+
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="_subject" value="New Email!">
+                        
+                    </div>
+                    <div class="form-group">
+                       <textarea name="mesaage" placeholder="Your Message" required></textarea>
+                       <input type="file" name="file">
+                    </div>
+                    <button type="submit" class="btn">Send message&#8594;</button>
+                </form>
+            </div>
+                     <div class="contact-info">
+                        <h3>Contact information</h3>
+                            
+                            <p><i class="fas fa-envelope"></i>TopNotes2023@gmail.com</p>
+                            <p><i class="fas fa-envelope"></i>Government Polytechnic, Mumbai (An Autonomous Institute of Government of Maharashtra)
+                                49, Kherwadi, A.Y.Jung Marg,
+                                Bandra (East), Mumbai-400051.</p>
+                        
+                     </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* contact */
+
+.contact{
+    min-height: 100vh;
+    padding: 50px;
+    text-align: center;
+}
+.container{
+    max-width: 800px;
+    margin:0 auto;
+}
+.container h2{
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+.contact-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+.contact-form{
+    text-align: left;
+}
+.contact-form h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+input, textarea{
+    width:100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+}
+input:focus,
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+}
+button{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3bff52;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #3bff52;
+}
+.contact-info{
+    text-align: left;
+}
+.contact-info h3
+{
+    font-size: 24px;
+    margin-bottom: 20px; 
+    color:#333;
+     padding:10px 10px; 
+}
+.contact-info p{
+    margin-bottom: 10px;
+    color:#555;
+    font-size:20px;
+}
+.contact-info i{
+    color: #3bff52;
+    margin-right: 12px;
+    
+}
+@media screen and(max-width: 768px){
+    .container{
+        padding: 20px;
+    }
+    .contact-wrapper{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+
+    }
+}
+</style>
+<!-----------footer----------->  
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Learn more from our website</h3>
+                <a href="index"><p>Website : GPM E-learn</p></a>
+                <div class="website-logo">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <a href="index"><img src="https://drive.google.com/uc?export=view&id=1vCvYtbAoY840Dn5xKi51lBnRqVXvEL15"></a>
+                <p>Best Website for students to learn the topics more clear with subject notes.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful links</h3>
+                <ul>
+                    <a href="contact"><li>Contact</li></a>
+                    <a href="About"><li>About Us</li></a>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us on</h3>
+                <ul>
+                    <a href="https://www.instagram.com/topnotes__/?next=%2F#"> <li>Instagram</li></a>
+                    
+                    <a href="https://t.me/TopNotes2023"><li>Telegram</li></a>
+                    <a href="https://x.com/TopNotes_?t=Dfa_k2qqXdspl9cK1pocow&s=08"><li>Twitter(X)</li></a>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2023 - GPM E-learn </p>
+
+    </div>
+</div>
+<!------------js for toggle menu--------->
+<script>
+    var MenuItems= document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight ="0px"
+    
+    function menutoggle(){
+        if( MenuItems.style.maxHeight == "0px")
+        {
+            MenuItems.style.maxHeight ="200px"
+        }
+        else
+        {
+            MenuItems.style.maxHeight ="0px"
+        }
+    }
+</script>
+</body>
+</html>
